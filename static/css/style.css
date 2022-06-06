@@ -1,0 +1,210 @@
+body {
+  background-color: black;
+  font-family: 'Roboto';
+  font-size: 30px;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+#header {
+  position: absolute;
+}
+
+aside {
+    color: #fff;
+    width: 200px;
+    padding-left: 20px;
+    height: 100vh;
+    background-image: linear-gradient(30deg , #0048bd, #44a7fd);
+    border-top-right-radius: 80px;
+  }
+  
+  aside a {
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    padding: 12px;
+    padding-left: 30px;
+    text-decoration: none;
+    -webkit-tap-highlight-color:transparent;
+  }
+  
+  aside a:hover {
+    color: #3f5efb;
+    background: #fff;
+    outline: none;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  
+  aside a i {
+    margin-right: 5px;
+  }
+  
+  aside a:hover::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 100%;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 0 20px 0 0 rgb(0, 0, 0);
+  }
+  
+  aside a:hover::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 38px;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -20px 0 0 rgb(0, 0, 0);
+  }
+
+  aside p {
+    margin: 0;
+    padding: 40px 0;
+  }
+.contain{
+  padding-left: 160px;
+}
+/* ================= VARIABLE ================ */
+:root {
+  --primary-color: hsl(9, 94%, 61%);
+  --primary-color-alt: hsl(28, 72%, 83%);
+  --second-color: #3e537c;
+  --second-color-alt: hsla(220, 33%, 36%, 65%);
+  --third-color: hsl(220, 36%, 28%);
+  --white-color: #fbfbfb;
+  --white-color-alt: hsl(12, 14%, 93%);
+  --dark-color: hsl(300, 100%, 0%);
+}
+/* -------- HOME SECTION -------------- */
+.section-1 {
+  background-color: var(--dark-color);
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  padding: 10rem 5rem 0 5rem;
+}
+
+.slogan .company-title {
+  background: -webkit-linear-gradient(
+    120deg,
+    var(--primary-color-alt),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 2rem;
+  font-size: 60px;
+  font-weight: 600;
+  max-width: 30rem;
+  font-size: 60px;
+  letter-spacing: 0.5rem;
+}
+
+/* -------- OFFER SECTION ------------- */
+.offer {
+  background-color: var(--dark-color);
+  margin: 1rem 0;
+  display: grid;
+  margin: 5rem 0;
+  align-items: center;
+  justify-content: space-between;
+  grid-template-rows: auto auto;
+}
+.offer img {
+  background-color: var(--dark-color);
+  padding: 2rem 0;
+}
+.offer-1 img {
+  background-color: var(--dark-color);
+  padding: 3rem 0;
+}
+.offer-description {
+  background-color: var(--white-color-alt);
+  padding: 0 1rem;
+}
+.offer-description .offer-title {
+  color: var(--second-color);
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 1.5rem 0 0.5rem 0;
+}
+.offer-description .offer-hook {
+  color: var(--second-color-alt);
+  font-size: 1.2rem;
+}
+.offer-1 {
+  grid-template-areas: "offer-1-img offer-desc-1";
+}
+.offer-2 {
+  grid-template-areas: "offer-desc-2 offer-2-img";
+}
+.offer-2-img {
+  grid-area: offer-2-img;
+}
+
+/* -------- PRODUCT SECTION ----------- */
+.section-3 {
+  display: grid;
+  place-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+}
+.product {
+  cursor: pointer;
+  background-color: var(--white-color-alt);
+  position: relative;
+}
+.product::before {
+  content: "";
+  background-image: linear-gradient(
+    to bottom,
+    hsla(29, 72%, 83%, 0.438),
+    hsla(9, 94%, 61%, 0.507)
+  );
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 300ms;
+}
+.product:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 300ms;
+}
+
+/* -------- SPONSOR SECTION ----------- */
+.section-4 {
+  margin: 5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.sponsor img {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: opacity 300ms;
+}
+.sponsor img:hover {
+  /* filter: grayscale(0); */
+  opacity: 1;
+}
